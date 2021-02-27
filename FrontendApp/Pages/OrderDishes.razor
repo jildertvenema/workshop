@@ -1,5 +1,21 @@
 ﻿@page "/dishes"
+@using ThuisbezorgdModels
+@using FrontendApp.Components
+@inject IDishService dishService
 
-<h3>OrderDishes</h3>
-
-
+@if (_dishes != null)
+{
+<div class="dishes-container">
+    <h2>Ons menu.</h2>
+    <div class="dishes-grid">
+        @foreach (Dish dish in _dishes)
+        {
+            <DishCard Name="@dish.Name"
+                      Description="@dish.Description"
+                      ImageUrl="@dish.ImageUrl"
+                      Price="@dish.Price">
+            </DishCard>
+        }
+        </div>
+    </div>
+    }

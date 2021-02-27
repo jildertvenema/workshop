@@ -21,5 +21,23 @@
 		"Price": 29.99,
 		"ImageUrl": "https://raw.githubusercontent.com/jildertvenema/workshop/master/EternalData/img/flammkuchen.jpg",
 		"Description": "met een salade van geroosterde pompoen en roodlof"
+	},
+	{
+		"Name": "Broodje hamburger met Italiaanse twist",
+		"Price": 19.99,
+		"ImageUrl": "https://raw.githubusercontent.com/jildertvenema/workshop/master/EternalData/img/hamburger.jpg",
+		"Description": "met tomatensalsa, basilicummayonaise en walnoot"
+	},
+	{
+		"Name": "Hartige taart met feta en champignons",
+		"Price": 19.99,
+		"ImageUrl": "https://raw.githubusercontent.com/jildertvenema/workshop/master/EternalData/img/hartige-taart.jpg",
+		"Description": "met komkommer-paprikasalade"
+	},
+	{
+		"Name": "Melanzane alla parmigiana",
+		"Price": 39.99,
+		"ImageUrl": "https://raw.githubusercontent.com/jildertvenema/workshop/master/EternalData/img/melanzane.jpg",
+		"Description": "Italiaanse ovenschotel met aubergine, mozzarella en tomaat"
 	}
 ]
