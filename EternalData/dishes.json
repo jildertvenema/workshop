@@ -1,0 +1,25 @@
+[{
+		"Name": "Kip in sesamjasje met geroosterde groenten",
+		"Price": 19.99,
+		"ImageUrl": "https://raw.githubusercontent.com/jildertvenema/workshop/master/EternalData/img/kipsesam.jpg",
+		"Description": "met knoflook-gemberrijst"
+	},
+	{
+		"Name": "Tartiflette met camembert, brie en spekjes",
+		"Price": 29.99,
+		"ImageUrl": "https://raw.githubusercontent.com/jildertvenema/workshop/master/EternalData/img/tartifilette.jpg",
+		"Description": "Franse ovenschotel met aardappel en crème fraîche met een frisse salade"
+	},
+	{
+		"Name": "Orzo met broccoli en pecorino",
+		"Price": 19.99,
+		"ImageUrl": "https://raw.githubusercontent.com/jildertvenema/workshop/master/EternalData/img/orzo.jpg",
+		"Description": "met verse citroentijm en zonnebloempitten"
+	},
+	{
+		"Name": "Flammkuchen met fourme d'Ambert, peer en spek",
+		"Price": 29.99,
+		"ImageUrl": "https://raw.githubusercontent.com/jildertvenema/workshop/master/EternalData/img/flammkuchen.jpg",
+		"Description": "met een salade van geroosterde pompoen en roodlof"
+	}
+]
