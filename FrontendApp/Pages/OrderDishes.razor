@@ -1,21 +1,24 @@
 ﻿@page "/dishes"
 @using ThuisbezorgdModels
 @using FrontendApp.Components
+@using FrontendApp.Interfaces
+
 @inject IDishService dishService
+@inject IBasketService basketService
 
 @if (_dishes != null)
 {
-<div class="dishes-container">
-    <h2>Ons menu.</h2>
-    <div class="dishes-grid">
-        @foreach (Dish dish in _dishes)
-        {
-            <DishCard Name="@dish.Name"
-                      Description="@dish.Description"
-                      ImageUrl="@dish.ImageUrl"
-                      Price="@dish.Price">
-            </DishCard>
-        }
+    <div class="dishes-container">
+        <h2>Ons menu.</h2>
+        <div class="dishes-grid">
+            @foreach (Dish dish in _dishes)
+            {
+                <DishCard OnClick="@(() => basketService.AddToBasket(dish))" Name="@dish.Name"
+                          Description="@dish.Description"
+                          ImageUrl="@dish.ImageUrl"
+                          Price="@dish.Price">
+                </DishCard>
+            }
         </div>
     </div>
-    }
+}

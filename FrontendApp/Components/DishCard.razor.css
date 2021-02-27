@@ -1,11 +1,18 @@
 ﻿.dish-card {
-    width: 25%;
+    width: 23%;
     margin: 8px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     border-radius: 4px;
     background-color: white;
-    height: 323px;
+    height: 340px;
     position: relative;
+    float: left;
+    cursor: pointer;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.dish-card:hover {
+    opacity: 0.5;
 }
 
 .dish-image {
@@ -13,7 +20,8 @@
     background-repeat: no-repeat;
     border-radius: 4px;
     width: 100%;
-    height: 56%;
+    height: 55%;
+    background-position: center;
     margin-bottom: 12px;
 }
 

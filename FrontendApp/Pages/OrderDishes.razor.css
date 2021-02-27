@@ -5,6 +5,5 @@
 }
 
 .dishes-grid {
-    display: flex;
-    grid-template-columns: auto auto auto;
+
 }

@@ -20,5 +20,8 @@ namespace FrontendApp.Components
         [Parameter]
         public decimal Price { get; set; }
 
+        [Parameter]
+        public EventCallback OnClick { get; set; }
+
     }
 }

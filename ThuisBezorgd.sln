@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendApp", "FrontendApp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend", "Backend\Backend.csproj", "{2A882CB2-5C8D-4663-ACC5-AE16A9B35A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThuisbezorgdModels", "ThuisbezorgdModelse\ThuisbezorgdModels.csproj", "{7EA50F58-727B-4DA1-93D3-1AFBFCCCA141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThuisbezorgdModels", "ThuisbezorgdModelse\ThuisbezorgdModels.csproj", "{7EA50F58-727B-4DA1-93D3-1AFBFCCCA141}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
