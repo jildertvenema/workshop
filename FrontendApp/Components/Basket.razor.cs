@@ -1,14 +1,11 @@
 ﻿using System;
+using System.Linq;
 
 namespace FrontendApp.Components
 {
     public partial class Basket
     {
         private bool _basketOpen = false;
-
-        public Basket()
-        {
-        }
 
         protected override void OnInitialized()
         {
@@ -19,6 +16,11 @@ namespace FrontendApp.Components
         {
             // Tell component to refresh
             StateHasChanged();
+        }
+
+        private decimal GetTotalPrice()
+        {
+            return basketService.GetAllDishesFromBasket().Sum(dish => dish.Amount * dish.Price);
         }
 
         private void ToggleBasketOpen()

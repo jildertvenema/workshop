@@ -3,26 +3,38 @@
 
 <span class="oi oi-basket shopping-basket" aria-hidden="true" @onclick="@ToggleBasketOpen"></span>
 
+
+@if (basketService.GetAllDishesFromBasket().Count > 0)
+{
+    <span class="basket-count">@basketService.GetAllDishesFromBasket().Sum(dish => dish.Amount)</span>
+}
+
 @if (_basketOpen)
 {
-    <div class="basket-list">
+<div class="basket-list">
 
-        <span class="basket-title">Winkelmandje</span>
-        <div class="divider"></div>
+    <span class="basket-title">Winkelmandje</span>
+    <div class="divider"></div>
 
-        @foreach (var dish in basketService.GetAllDishesFromBasket())
-        {
-            <div class="order-item">
-                <span class="order-item-amount">@(dish.Amount)x</span>
-                <span class="order-item-name">@dish.Name</span>
-            </div>
-        }
+    @foreach (var dish in basketService.GetAllDishesFromBasket())
+    {
+    <div class="order-item">
+        <span class="order-item-amount">@(dish.Amount)x</span>
+        <span class="order-item-price">€@(dish.Price * dish.Amount)</span>
+        <span class="order-item-name">@dish.Name</span>
+    </div>
+    }
 
-        @if (basketService.GetAllDishesFromBasket().Count == 0)
-        {
+    @if (basketService.GetAllDishesFromBasket().Count == 0)
+    {
         <span class="oi oi-basket shopping-basket-empty" aria-hidden="true"></span>
         <span class="shopping-basket-empty-text">Kies iets lekkers uit het menu en plaats je bestelling.</span>
+    }
+    else
+    {
+        <div class="divider"></div>
+        <span class="total-text">Total: €@GetTotalPrice()</span>
+    }
 
-        }
-    </div>
+</div>
 }

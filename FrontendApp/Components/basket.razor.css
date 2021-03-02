@@ -1,6 +1,7 @@
 ﻿.shopping-basket {
     cursor: pointer;
     transition: opacity 0.1s ease-in-out;
+    font-size: 22px;
 }
 
 .shopping-basket:hover {
@@ -23,6 +24,14 @@
 
 .order-item-name {
     float: right;
+}
+
+.order-item-price {
+    float: right;
+    margin-left: 24px;
+    font-size: 14px;
+    color: #918e8e;
+    margin-top: 2px;
 }
 
 .shopping-basket-empty {
@@ -54,4 +63,21 @@
     color: #515151;
     justify-content: center;
     font-weight: 600;
+}
+
+.basket-count {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #ffe900;
+    text-align: center;
+    line-height: 30px;
+    position: fixed;
+    right: 4px;
+    top: 4px;
+}
+
+.total-text {
+    float: right;
+    font-weight: bold;
 }
