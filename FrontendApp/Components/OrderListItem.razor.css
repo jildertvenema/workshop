@@ -25,11 +25,11 @@
 }
 
 .BeingPrepared {
-
+    color: orange;
 }
 
 .BeingDeliverd {
-
+    color: #0a45ff;
 }
 
 .Deliverd {
@@ -42,4 +42,23 @@
     background-color: #d7d7d7;
     margin-bottom: 16px;
     margin-top: 8px;
+}
+
+.order-status-button {
+    background-color: #e6d435;
+    border: none;
+    color: black;
+    padding: 9px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.update-order-status-title {
+    text-align: center;
+    font-size: 17px;
 }

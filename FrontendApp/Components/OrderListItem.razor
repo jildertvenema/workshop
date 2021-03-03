@@ -1,6 +1,12 @@
-﻿<div class="order-card">
+﻿@using ThuisbezorgdModels.Enum
+@using ThuisbezorgdModels.Utils;
+@using ThuisbezorgdModels;
 
-    <div class="order-status-title">Order Status: <span class="order-status @Order.OrderStatus.ToString()">@Order.OrderStatus.ToString()</span></div>
+@inject IDishService dishService
+
+<div class="order-card">
+
+    <div class="order-status-title">Order Status: <span class="order-status @Order.OrderStatus.ToString()">@Utils.SplitCamelCase(Order.OrderStatus.ToString())</span></div>
     <div class="divider"></div>
 
     @if (Order.Dishes != null && Order.Dishes.Count > 0)
@@ -10,5 +16,15 @@
             <DishDetails Dish="@dish" />
         }
     }
+
+    <div class="divider"></div>
+
+    <div class="update-order-status">
+        <div class="update-order-status-title">Update order status</div>
+        @foreach (string orderStatusType in Enum.GetNames(typeof(OrderStatusType)))
+        {
+            <button class="order-status-button" @onclick="@(e => UpdateOrderType(Enum.Parse<OrderStatusType>(orderStatusType)))">@orderStatusType</button>
+        }
+    </div>
 
 </div>
