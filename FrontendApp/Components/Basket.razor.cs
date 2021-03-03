@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
+using ThuisbezorgdModels.Model;
 
 namespace FrontendApp.Components
 {
@@ -28,5 +30,10 @@ namespace FrontendApp.Components
             _basketOpen = !_basketOpen;
         }
 
+        private async Task PlaceOrder()
+        {
+            await dishService.PostOrderAsync(new Order(basketService.GetAllDishesFromBasket()));
+            basketService.ClearBasket();
+        }
     }
 }

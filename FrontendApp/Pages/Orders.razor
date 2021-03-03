@@ -1,0 +1,19 @@
+﻿@page "/orders"
+
+@using ThuisbezorgdModels
+@using FrontendApp.Components
+
+@inject IDishService dishService
+
+@if(_orders != null && _orders.Length > 0)
+{
+<div class="order-list">
+    @foreach (var order in _orders)
+    {
+        <OrderListItem Order="@order" />
+    }
+</div>
+} else
+{
+    <h4>There aren't any orders placed yet.</h4>
+}

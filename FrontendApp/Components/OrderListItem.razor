@@ -1,0 +1,14 @@
+﻿<div class="order-card">
+
+    <div class="order-status-title">Order Status: <span class="order-status @Order.OrderStatus.ToString()">@Order.OrderStatus.ToString()</span></div>
+    <div class="divider"></div>
+
+    @if (Order.Dishes != null && Order.Dishes.Count > 0)
+    {
+        @foreach (var dish in Order.Dishes)
+        {
+            <DishDetails Dish="@dish" />
+        }
+    }
+
+</div>

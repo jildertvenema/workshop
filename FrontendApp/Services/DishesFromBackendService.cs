@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using ThuisbezorgdModels;
@@ -24,6 +23,11 @@ namespace FrontendApp.Services
         public async Task PostOrderAsync(Order order)
         {
             await _httpClient.PostAsJsonAsync(BACKEND_URL + "/order", order);
+        }
+
+        public async Task<Order[]> GetAllOrdersAsync()
+        {
+            return await _httpClient.GetFromJsonAsync<Order[]>(BACKEND_URL + "/orders");
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿.order-item-amount {
+    margin-right: 24px;
+}
+
+.order-item-name {
+    float: right;
+}
+
+.order-item-price {
+    float: right;
+    margin-left: 24px;
+    font-size: 14px;
+    color: #918e8e;
+    margin-top: 2px;
+}
