@@ -23,7 +23,7 @@
         <div class="update-order-status-title">Update order status</div>
         @foreach (string orderStatusType in Enum.GetNames(typeof(OrderStatusType)))
         {
-            <button class="order-status-button" @onclick="@(e => UpdateOrderType(Enum.Parse<OrderStatusType>(orderStatusType)))">@orderStatusType</button>
+            <button class="order-status-button" @onclick="@(e => UpdateOrderType(Enum.Parse<OrderStatusType>(orderStatusType)))">@Utils.SplitCamelCase(orderStatusType)</button>
         }
     </div>
 
