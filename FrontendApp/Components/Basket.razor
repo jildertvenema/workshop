@@ -18,11 +18,11 @@
 
     @foreach (var dish in basketService.GetAllDishesFromBasket())
     {
-    <div class="order-item">
-        <span class="order-item-amount">@(dish.Amount)x</span>
-        <span class="order-item-price">€@(dish.Price * dish.Amount)</span>
-        <span class="order-item-name">@dish.Name</span>
-    </div>
+        <div class="order-item">
+            <span class="order-item-amount">@(dish.Amount)x</span>
+            <span class="order-item-price">€@(dish.Price * dish.Amount)</span>
+            <span class="order-item-name">@dish.Name</span>
+        </div>
     }
 
     @if (basketService.GetAllDishesFromBasket().Count == 0)
@@ -34,6 +34,7 @@
     {
         <div class="divider"></div>
         <span class="total-text">Total: €@GetTotalPrice()</span>
+        <button class="order-button">Place order</button>
     }
 
 </div>

@@ -6,10 +6,12 @@
 
 .main {
     flex: 1;
+    background-color: #f8f8f8;
 }
 
 .sidebar {
-    background-color: #ff8000;
+    background-color: #ffffff;
+    border-right: 1px solid rgb(232, 232, 232);
 }
 
 .top-row {

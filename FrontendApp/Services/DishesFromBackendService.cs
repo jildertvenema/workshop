@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using ThuisbezorgdModels;
+using ThuisbezorgdModels.Model;
 
 namespace FrontendApp.Services
 {
@@ -20,9 +21,9 @@ namespace FrontendApp.Services
             return await _httpClient.GetFromJsonAsync<Dish[]>(BACKEND_URL + "/dishes");
         }
 
-        public Task PostOrderAsync(Dish[] dishes)
+        public async Task PostOrderAsync(Order order)
         {
-            throw new NotImplementedException();
+            await _httpClient.PostAsJsonAsync(BACKEND_URL + "/order", order);
         }
     }
 }
