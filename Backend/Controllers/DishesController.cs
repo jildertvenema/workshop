@@ -11,41 +11,36 @@ namespace Backend.Controllers
     [Route("[controller]")]
     public class DishesController : Controller
     {
-        private IDishService _dishService;
-
-        public DishesController(IDishService dishService)
-        {
-            _dishService = dishService;
-        }
-
         [HttpGet]
         [Route("dishes")]
         public async Task<Dish[]> GetAllDishesAsync()
         {
-            return await _dishService.GetAllDishesAsync();
+            // Get all dishes from DishService and return all dishes
+            throw new NotImplementedException();
         }
 
         [HttpPost]
         [Route("order")]
         public async Task<ActionResult> PostOrderAsync([FromBody] Order order)
         {
-            await _dishService.PostOrderAsync(order);
-            return Ok();
+            // Save order in DishService and Return Ok()
+            throw new NotImplementedException();
         }
 
         [HttpGet]
         [Route("orders")]
         public async Task<Order[]> GetAllOrdersAsync()
         {
-            return await _dishService.GetAllOrdersAsync();
+            // Get all orders from DishService and return all orders
+            throw new NotImplementedException();
         }
 
         [HttpPost]
         [Route("order-status/{orderGuid}")]
         public Task<ActionResult> UpdateOrderStatusAsync(string orderGuid, [FromBody] OrderStatusType orderStatus)
         {
-            _dishService.UpdateOrderStatusWithGuidAsync(new Guid(orderGuid), orderStatus);
-            return Task.FromResult(Ok() as ActionResult);
+            // Update an order status in DishService and Return Ok()
+            throw new NotImplementedException();
         }
     }
 }
