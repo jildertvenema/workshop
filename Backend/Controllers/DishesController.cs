@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 using ThuisbezorgdModels;
+using ThuisbezorgdModels.Enum;
+using ThuisbezorgdModels.Model;
 
 namespace Backend.Controllers
 {
@@ -20,6 +23,29 @@ namespace Backend.Controllers
         public async Task<Dish[]> GetAllDishesAsync()
         {
             return await _dishService.GetAllDishesAsync();
+        }
+
+        [HttpPost]
+        [Route("order")]
+        public async Task<ActionResult> PostOrderAsync([FromBody] Order order)
+        {
+            await _dishService.PostOrderAsync(order);
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("orders")]
+        public async Task<Order[]> GetAllOrdersAsync()
+        {
+            return await _dishService.GetAllOrdersAsync();
+        }
+
+        [HttpPost]
+        [Route("order-status/{orderGuid}")]
+        public Task<ActionResult> UpdateOrderStatusAsync(string orderGuid, [FromBody] OrderStatusType orderStatus)
+        {
+            _dishService.UpdateOrderStatusWithGuidAsync(new Guid(orderGuid), orderStatus);
+            return Task.FromResult(Ok() as ActionResult);
         }
     }
 }
