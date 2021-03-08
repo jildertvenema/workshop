@@ -3,9 +3,20 @@
 @using FrontendApp.Components
 @using FrontendApp.Interfaces
 
+@inject IDishService dishService
+
 <div class="dishes-container">
     <h2>Ons menu.</h2>
     <div class="dishes-grid">
-        Ziuz is always hungry..
+        @foreach (Dish dish in _dishes)
+        {
+            <DishCard 
+                    Name="@dish.Name"
+                    Description="@dish.Description"
+                    ImageUrl="@dish.ImageUrl"
+                    Price="@dish.Price"
+             >
+            </DishCard>
+        }
     </div>
 </div>
