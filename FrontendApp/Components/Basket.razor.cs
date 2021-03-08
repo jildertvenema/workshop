@@ -1,6 +1,8 @@
-﻿using System;
+﻿using FrontendApp.Interfaces;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
+using ThuisbezorgdModels;
 using ThuisbezorgdModels.Model;
 
 namespace FrontendApp.Components
@@ -8,6 +10,11 @@ namespace FrontendApp.Components
     public partial class Basket
     {
         private bool _basketOpen = false;
+
+        // REMOVE THIS CODE \/
+        private IDishService dishService;
+        private IBasketService basketService;
+        // REMOVE THIS CODE /\
 
         protected override void OnInitialized()
         {
