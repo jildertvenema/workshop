@@ -37,7 +37,7 @@ namespace Backend.Controllers
 
         [HttpPost]
         [Route("order-status/{orderGuid}")]
-        public Task<ActionResult> UpdateOrderStatusAsync(string orderGuid, [FromBody] OrderStatusType orderStatus)
+        public ActionResult UpdateOrderStatusAsync(string orderGuid, [FromBody] OrderStatusType orderStatus)
         {
             // Update an order status in DishService and Return Ok()
             throw new NotImplementedException();
