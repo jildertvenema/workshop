@@ -42,10 +42,10 @@ namespace Backend.Controllers
 
         [HttpPost]
         [Route("order-status/{orderGuid}")]
-        public Task<ActionResult> UpdateOrderStatusAsync(string orderGuid, [FromBody] OrderStatusType orderStatus)
+        public ActionResult UpdateOrderStatusAsync(string orderGuid, [FromBody] OrderStatusType orderStatus)
         {
             _dishService.UpdateOrderStatusWithGuidAsync(new Guid(orderGuid), orderStatus);
-            return Task.FromResult(Ok() as ActionResult);
+            return Ok();
         }
     }
 }
