@@ -11,6 +11,7 @@ namespace Backend
 {
     public class Startup
     {
+        private string Cors => "CorsPolicy";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,6 +31,17 @@ namespace Backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Backend", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(Cors,
+                                  b => b
+                                       .AllowAnyMethod()
+                                       .AllowAnyHeader()
+                                       .AllowAnyOrigin()
+                                 );
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +57,8 @@ namespace Backend
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(Cors);
 
             app.UseAuthorization();
 
