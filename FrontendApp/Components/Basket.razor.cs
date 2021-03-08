@@ -11,11 +11,6 @@ namespace FrontendApp.Components
     {
         private bool _basketOpen = false;
 
-        // REMOVE THIS CODE \/
-        private IDishService dishService;
-        private IBasketService basketService;
-        // REMOVE THIS CODE /\
-
         protected override void OnInitialized()
         {
             basketService.OnNewDishAdded += RefreshBasketItems;

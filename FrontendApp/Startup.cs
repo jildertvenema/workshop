@@ -32,6 +32,7 @@ namespace FrontendApp
             services.AddServerSideBlazor();
             services.AddScoped(sp => new HttpClient());
             services.AddScoped<IDishService, DishesFromBackendService>();
+            services.AddScoped<IBasketService, BasketService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

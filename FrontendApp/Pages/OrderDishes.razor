@@ -4,6 +4,7 @@
 @using FrontendApp.Interfaces
 
 @inject IDishService dishService
+@inject IBasketService basketService
 
 <div class="dishes-container">
     <h2>Ons menu.</h2>
@@ -11,6 +12,7 @@
         @foreach (Dish dish in _dishes)
         {
             <DishCard 
+                    OnClick="@(() => basketService.AddToBasket(dish))"
                     Name="@dish.Name"
                     Description="@dish.Description"
                     ImageUrl="@dish.ImageUrl"

@@ -7,32 +7,48 @@ namespace FrontendApp.Services
 {
     public class BasketService : IBasketService
     {
-        public event EventHandler OnNewDishAdded;
         private List<Dish> _dishes;
+
+        public event EventHandler OnNewDishAdded;
 
         public BasketService()
         {
-            throw new NotImplementedException();
+            _dishes = new List<Dish>();
         }
 
         public void AddToBasket(Dish dish)
         {
-            throw new NotImplementedException();
+            int dishIndex = _dishes.IndexOf(dish);
+            if (dishIndex >= 0)
+            {
+                _dishes[dishIndex].Amount++;
+            }
+            else
+            {
+                dish.Amount++;
+                _dishes.Add(dish);
+            }
+
+            OnNewDishAdded?.Invoke(this, null);
         }
 
         public void ClearBasket()
         {
-            throw new NotImplementedException();
+            this._dishes = new List<Dish>();
         }
 
         public List<Dish> GetAllDishesFromBasket()
         {
-            throw new NotImplementedException();
+            return _dishes;
         }
 
         public void RemoveFromBasket(Dish dish)
         {
-            throw new NotImplementedException();
+            int dishIndex = _dishes.IndexOf(dish);
+            if (dishIndex >= 0)
+            {
+                _dishes[dishIndex].Amount--;
+            }
         }
     }
 }
