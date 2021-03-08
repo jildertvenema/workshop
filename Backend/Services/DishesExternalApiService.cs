@@ -18,6 +18,7 @@ namespace Backend.Services
 
         public DishesExternalApiService(IHttpClientFactory httpClientFactory)
         {
+            _orders = new List<Order>();
             _httpClientFactory = httpClientFactory;
         }
 
@@ -30,13 +31,15 @@ namespace Backend.Services
             return JsonConvert.DeserializeObject<Dish[]>(jsonResult);
         }
 
-        public async Task PostOrderAsync(Order order)
+        public Task PostOrderAsync(Order order)
         {
             _orders.Add(order);
+            return Task.CompletedTask;
         }
-        public async Task<Order[]> GetAllOrdersAsync()
+
+        public Task<Order[]> GetAllOrdersAsync()
         {
-            return _orders.ToArray();
+            return Task.FromResult(_orders.ToArray());
         }
 
         public Task UpdateOrderStatusWithGuidAsync(Guid orderGuid, OrderStatusType orderStatus)
