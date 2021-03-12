@@ -5,11 +5,9 @@ namespace FrontendApp.Pages
 {
     public partial class OrderDishes
     {
-        private Dish[] _dishes;
-
         protected override async Task OnInitializedAsync()
         {
-            _dishes = await dishService.GetAllDishesAsync();
+            // Get dishes from dishService and store in variable.
         }
     }
 }

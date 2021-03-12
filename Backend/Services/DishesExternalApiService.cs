@@ -18,34 +18,26 @@ namespace Backend.Services
 
         public DishesExternalApiService(IHttpClientFactory httpClientFactory)
         {
-            _httpClientFactory = httpClientFactory;
-            _orders = new List<Order>();
+            throw new NotImplementedException();
         }
 
         public async Task<Dish[]> GetAllDishesAsync()
         {
-            HttpClient httpClient = _httpClientFactory.CreateClient();
-
-            HttpResponseMessage result = await httpClient.GetAsync(EXTERNAL_DISHES_URL);
-            string jsonResult = await result.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<Dish[]>(jsonResult);
+            throw new NotImplementedException();
         }
 
         public async Task PostOrderAsync(Order order)
         {
-            _orders.Add(order);
-            await Task.CompletedTask;
+            throw new NotImplementedException();
         }
         public async Task<Order[]> GetAllOrdersAsync()
         {
-            return await Task.FromResult(_orders.ToArray());
+            throw new NotImplementedException();
         }
 
         public Task UpdateOrderStatusWithGuidAsync(Guid orderGuid, OrderStatusType orderStatus)
         {
-            _orders.Find(order => order.OrderGuid == orderGuid).OrderStatus = orderStatus;
-            return Task.CompletedTask;
+            throw new NotImplementedException();
         }
     }
 }

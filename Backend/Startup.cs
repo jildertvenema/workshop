@@ -24,8 +24,7 @@ namespace Backend
         {
             services.AddControllers();
 
-            services.AddHttpClient();
-            services.AddSingleton<IDishService, DishesExternalApiService>();
+            // Something should be intjected here.
 
             services.AddSwaggerGen(c =>
             {

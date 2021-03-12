@@ -10,31 +10,29 @@ namespace FrontendApp.Services
 {
     public class DishesFromBackendService : IDishService
     {
-        HttpClient _httpClient;
         private const string BACKEND_URL = "https://localhost:44360/Dishes";
-        public DishesFromBackendService(HttpClient httpClient)
+        public DishesFromBackendService()
         {
-            _httpClient = httpClient;
         }
 
         public async Task<Dish[]> GetAllDishesAsync()
         {
-            return await _httpClient.GetFromJsonAsync<Dish[]>(BACKEND_URL + "/dishes");
+            throw new NotImplementedException();
         }
 
         public async Task PostOrderAsync(Order order)
         {
-            await _httpClient.PostAsJsonAsync(BACKEND_URL + "/order", order);
+            throw new NotImplementedException();
         }
 
         public async Task<Order[]> GetAllOrdersAsync()
         {
-            return await _httpClient.GetFromJsonAsync<Order[]>(BACKEND_URL + "/orders");
+            throw new NotImplementedException();
         }
 
         public async Task UpdateOrderStatusWithGuidAsync(Guid orderGuid, OrderStatusType orderStatusType)
         {
-            await _httpClient.PostAsJsonAsync(BACKEND_URL + "/order-status/" + Uri.EscapeDataString(orderGuid.ToString()), orderStatusType);
+            throw new NotImplementedException();
         }
     }
 }

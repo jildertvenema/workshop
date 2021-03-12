@@ -1,11 +1,7 @@
 ﻿@using FrontendApp.Interfaces
 @using ThuisbezorgdModels;
 
-@inject IDishService dishService
-@inject IBasketService basketService
-
 <span class="oi oi-basket shopping-basket" aria-hidden="true" @onclick="@ToggleBasketOpen"></span>
-
 
 @if (basketService.GetAllDishesFromBasket().Count > 0)
 {
@@ -14,27 +10,27 @@
 
 @if (_basketOpen)
 {
-    <div class="basket-list">
+<div class="basket-list">
 
-        <span class="basket-title">Winkelmandje</span>
+    <span class="basket-title">Winkelmandje</span>
+    <div class="divider"></div>
+
+    @foreach (var dish in basketService.GetAllDishesFromBasket())
+    {
+        <DishDetails Dish="@dish" />
+    }
+
+    @if (basketService.GetAllDishesFromBasket().Count == 0)
+    {
+        <span class="oi oi-basket shopping-basket-empty" aria-hidden="true"></span>
+        <span class="shopping-basket-empty-text">Kies iets lekkers uit het menu en plaats je bestelling.</span>
+    }
+    else
+    {
         <div class="divider"></div>
+        <span class="total-text">Total: €@GetTotalPrice()</span>
+        <button class="order-button" @onclick="@PlaceOrder">Place order</button>
+    }
 
-        @foreach (var dish in basketService.GetAllDishesFromBasket())
-        {
-            <DishDetails Dish="@dish" />
-        }
-
-        @if (basketService.GetAllDishesFromBasket().Count == 0)
-        {
-            <span class="oi oi-basket shopping-basket-empty" aria-hidden="true"></span>
-            <span class="shopping-basket-empty-text">Kies iets lekkers uit het menu en plaats je bestelling.</span>
-        }
-        else
-        {
-            <div class="divider"></div>
-            <span class="total-text">Total: €@GetTotalPrice()</span>
-            <button class="order-button" @onclick="@PlaceOrder">Place order</button>
-        }
-
-    </div>
+</div>
 }
